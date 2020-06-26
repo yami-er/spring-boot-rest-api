@@ -12,7 +12,6 @@ public class LoadDatabase {
 
     @Bean
     CommandLineRunner initDatabase(EmployeeRepository employeeRepository, OrderRepository orderRepository) {
-
         return args -> {
             employeeRepository.save(new Employee("Bilbo", "Baggins", "burglar"));
             employeeRepository.save(new Employee("Frodo", "Baggins", "thief"));
@@ -25,7 +24,6 @@ public class LoadDatabase {
             orderRepository.findAll().forEach(order -> {
                 log.info("Preloaded " + order);
             });
-
         };
     }
 }
